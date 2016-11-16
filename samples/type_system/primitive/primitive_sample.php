@@ -17,7 +17,7 @@ class B {
 
 function bar(): bool {
 
-  $b = new B();
+  $b = new \type_system\primitive\B();
 
   var_dump($b);
 
