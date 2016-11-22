@@ -24,7 +24,15 @@ function run(): void {
   // assert()
   var_dump(Size::assert(Size::LARGE));
   var_dump(Size::assert("medium"));
-  var_dump(Size::assert("hoge"));
+  // fatal error
+  //var_dump(Size::assert("hoge"));
+
+  // assertAll()
+  echo "--- assertAll() ---" . PHP_EOL;
+  var_dump(Size::assertAll(Vector{Size::LARGE}));
+  // fatal error
+  //var_dump(Size::assertAll(Vector{"hoge"}));
+  var_dump(Size::assertAll(Vector{"small", "x_large"}));
 }
 
 \type_system\enum\run();
