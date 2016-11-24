@@ -33,6 +33,11 @@ function run(): void {
   // fatal error
   //var_dump(Size::assertAll(Vector{"hoge"}));
   var_dump(Size::assertAll(Vector{"small", "x_large"}));
+
+  // coerce()
+  echo "--- coerce ---" . PHP_EOL;
+  var_dump(Size::coerce(1));
+  var_dump(Size::coerce(Size::LARGE));
 }
 
 \type_system\enum\run();
