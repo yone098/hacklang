@@ -47,6 +47,10 @@ function run(): void {
   echo "--- getValues ---" . PHP_EOL;
   var_dump(Size::getValues());
 
+  // isValid()
+  echo "--- isValid ---" . PHP_EOL;
+  var_dump(Size::isValid(3));
+  var_dump(Size::isValid(9));
 }
 
 \type_system\enum\run();
