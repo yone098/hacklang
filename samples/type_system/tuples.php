@@ -20,6 +20,12 @@ function find_longest_and_index(array<string> $strs): (string, int) {
   return tuple($longest_str, $longest_index);
 }
 
+// Initializers
+class A {
+  private $inst = tuple(2, "hi");
+  public static $stat = tuple(array(1, 2), Vector {3, 4});
+}
+
 function run(): void {
   // Tuples lend themselves very well to list()
   list($q, $r, $has_remainder) = q_and_r(5, 2);
@@ -31,7 +37,13 @@ function run(): void {
 
   $strs = array("ABCDE", "tjkdsfjkwewowe", "Hello, this is an intro of tuples");
   var_dump(find_longest_and_index($strs));
+
+  echo "===== Initilizers =====" . PHP_EOL;
+  var_dump(new A());
+  echo "===== Initilizers static props =====" . PHP_EOL;
+  var_dump(A::$stat);
 }
+
 
 
 \type_system\tuples\run();
