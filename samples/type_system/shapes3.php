@@ -14,13 +14,14 @@ $ hhvm shapes3.php
 
 Catchable fatal error: Hack type error: Invalid return type at /home/ubuntu/hacklang/samples/type_system/shapes3.php line 13
 */
-    //$user['name'] = $name;
+    $user['name'] = $name;
     return $user;
   }
 }
 
 function run(): void {
-  echo "===== start shapes3 sample =====" . PHP_EOL;
+  //All Fields Are Required
+  echo "===== start shapes3 all fields are required sample =====" . PHP_EOL;
   var_dump(UserClass::create_user(1, 'James'));
 }
 
