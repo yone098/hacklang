@@ -36,7 +36,7 @@ function bar(Base $b): void {
   // between a type of I and Base. So we can only call methods common to both.
   // which in this case there are none.
   // Catchable fatal error: Hack type error: Could not find method foo in an object of type type_system\refining\gotch\I at /home/yone098/hacklang/samples/type_system/ref_gotcha.php line 38
-  var_dump($b->foo());
+  //var_dump($b->foo());
 }
 
 function run(): void {
