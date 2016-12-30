@@ -1,1 +1,2 @@
 unsafe_xhp = true
+strict_types = false

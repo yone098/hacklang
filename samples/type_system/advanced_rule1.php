@@ -1,4 +1,4 @@
-<?hh
+<?hh 
 
 namespace type_system\advanced\softhint;
 
@@ -9,10 +9,11 @@ function soft_hint(@int $x): bool {
   return $x < 5 ? true : false;
 }
 
-function run(): void {
+function softhint_run(): void {
   echo "===== start types:advanced rule softhint sample =====" . PHP_EOL;
-  soft_hint(5);
-  //soft_hint(false);
+  var_dump(soft_hint(5));
+  //var_dump(soft_hint(true));
 }
 
-\type_system\advanced\softhint\run();
+//\type_system\advanced\softhint\run();
+softhint_run();
