@@ -2,6 +2,7 @@
 
 namespace type_system\typealias\transparent;
 
+/*
 type Matrix<T> = Vector<Vector<T>>;
 
 function add<T as num>(Matrix<T> $m1, Matrix<T> $m2): Matrix<T> {
@@ -28,14 +29,17 @@ function get_m1(): Matrix<int> {
 function get_m2(): Vector<Vector<int>> {
   return Vector { Vector { 5, 6 }, Vector { 7, 8 } };
 }
+*/
 
 function run(): void {
+/*
   var_dump(add(
     get_m1(),
     // get_m2() returns a Vector<Vector<int>>, and add() takes a Matrix<int>,
     // but no conversion is needed here since the two are equivalent.
     get_m2()
   ));
+*/
 }
 
 
