@@ -2,7 +2,7 @@
 
 namespace type_system;
 
-//require "facebook/xhp-lib";
+require __DIR__ . '/vendor/autoload.php';
 
 /*
 class :ts-simple-xhp extends :x:element {
