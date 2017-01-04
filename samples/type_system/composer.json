@@ -1,5 +1,5 @@
 {
     "require": {
-        "facebook/xhp-lib": "2.2.1"
+        "facebook/xhp-lib": "2.x"
     }
 }

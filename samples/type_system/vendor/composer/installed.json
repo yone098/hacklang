@@ -1,27 +1,68 @@
 [
     {
-        "name": "facebook/xhp-lib",
-        "version": "2.2.1",
-        "version_normalized": "2.2.1.0",
+        "name": "fredemmott/type-assert",
+        "version": "v1.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/facebook/xhp-lib.git",
-            "reference": "87cfd8fea00ec19dc0e4fb682cae111601c66adb"
+            "url": "https://github.com/fredemmott/type-assert.git",
+            "reference": "4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/87cfd8fea00ec19dc0e4fb682cae111601c66adb",
-            "reference": "87cfd8fea00ec19dc0e4fb682cae111601c66adb",
+            "url": "https://api.github.com/repos/fredemmott/type-assert/zipball/4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0",
+            "reference": "4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0",
             "shasum": ""
         },
         "require": {
-            "hhvm": "*"
+            "hhvm": "~3.12"
         },
         "require-dev": {
-            "91carriage/phpunit-hhi": "4.5.*",
-            "phpunit/phpunit": "4.5.*"
+            "91carriage/phpunit-hhi": "~5.1",
+            "phpunit/phpunit": "~5.1"
         },
-        "time": "2015-06-29T21:19:41+00:00",
+        "time": "2016-12-04T19:05:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "ISC"
+        ],
+        "description": "Convert untyped data to typed data",
+        "keywords": [
+            "TypeAssert",
+            "hack"
+        ]
+    },
+    {
+        "name": "facebook/xhp-lib",
+        "version": "v2.3.2",
+        "version_normalized": "2.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/facebook/xhp-lib.git",
+            "reference": "4d2e2640534f50debe04f6a398db064fa6b1bb72"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/4d2e2640534f50debe04f6a398db064fa6b1bb72",
+            "reference": "4d2e2640534f50debe04f6a398db064fa6b1bb72",
+            "shasum": ""
+        },
+        "require": {
+            "fredemmott/type-assert": "^0.2.0 || ^1.0",
+            "hhvm": "~3.12"
+        },
+        "require-dev": {
+            "91carriage/phpunit-hhi": "^5.1.0",
+            "phpunit/phpunit": "^5.1.0"
+        },
+        "time": "2016-12-04T21:31:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

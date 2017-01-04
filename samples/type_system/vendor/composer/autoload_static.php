@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0a98b60ddb323ca00350075a8a4d1367
+class ComposerStaticInit9e278bcc50eaa8339db2c3d7476a0376
 {
     public static $classMap = array (
+        'FredEmmott\\TypeAssert\\IncorrectTypeException' => __DIR__ . '/..' . '/fredemmott/type-assert/src/IncorrectTypeException.php',
+        'FredEmmott\\TypeAssert\\PrivateImpl\\TypeStructureImpl' => __DIR__ . '/..' . '/fredemmott/type-assert/src/PrivateImpl/TypeStructureImpl.php',
+        'FredEmmott\\TypeAssert\\TypeAssert' => __DIR__ . '/..' . '/fredemmott/type-assert/src/TypeAssert.php',
+        'FredEmmott\\TypeAssert\\UnsupportedTypeException' => __DIR__ . '/..' . '/fredemmott/type-assert/src/UnsupportedTypeException.php',
         'HasXHPBaseHTMLHelpers' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/HasXHPBaseHTMLHelpers.php',
         'HasXHPHelpers' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/XHPHelpers.php',
         'ReflectionXHPAttribute' => __DIR__ . '/..' . '/facebook/xhp-lib/src/core/ReflectionXHPAttribute.php',
@@ -114,6 +118,7 @@ class ComposerStaticInit0a98b60ddb323ca00350075a8a4d1367
         'xhp_output' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/o/Output.php',
         'xhp_p' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/p/P.php',
         'xhp_param' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/p/Param.php',
+        'xhp_picture' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/p/Picture.php',
         'xhp_pre' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/p/Pre.php',
         'xhp_progress' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/p/Progress.php',
         'xhp_q' => __DIR__ . '/..' . '/facebook/xhp-lib/src/html/tags/q/Q.php',
@@ -169,7 +174,7 @@ class ComposerStaticInit0a98b60ddb323ca00350075a8a4d1367
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit0a98b60ddb323ca00350075a8a4d1367::$classMap;
+            $loader->classMap = ComposerStaticInit9e278bcc50eaa8339db2c3d7476a0376::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -20,7 +20,7 @@ abstract class :x:element extends :x:composable-element implements XHPRoot {
   abstract protected function render(): XHPRoot;
 
   final public function toString(): string {
-    return $this->asyncToString()->getWaitHandle()->join();
+    return \HH\Asio\join($this->asyncToString());
   }
 
   final public async function asyncToString(): Awaitable<string> {
@@ -33,7 +33,7 @@ abstract class :x:element extends :x:composable-element implements XHPRoot {
     $that = await $this->__flushRenderedRootElement();
     return await $that->__flushSubtree();
   }
-
+/*
   protected async function __renderAndProcess(): Awaitable<XHPRoot> {
     if (:xhp::$ENABLE_VALIDATION) {
       $this->validateChildren();
@@ -53,7 +53,7 @@ abstract class :x:element extends :x:composable-element implements XHPRoot {
 
     return $composed;
   }
-
+*/
   final protected async function __flushRenderedRootElement(
   ): Awaitable<:x:primitive> {
     $that = $this;

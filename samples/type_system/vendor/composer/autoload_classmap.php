@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'FredEmmott\\TypeAssert\\IncorrectTypeException' => $vendorDir . '/fredemmott/type-assert/src/IncorrectTypeException.php',
+    'FredEmmott\\TypeAssert\\PrivateImpl\\TypeStructureImpl' => $vendorDir . '/fredemmott/type-assert/src/PrivateImpl/TypeStructureImpl.php',
+    'FredEmmott\\TypeAssert\\TypeAssert' => $vendorDir . '/fredemmott/type-assert/src/TypeAssert.php',
+    'FredEmmott\\TypeAssert\\UnsupportedTypeException' => $vendorDir . '/fredemmott/type-assert/src/UnsupportedTypeException.php',
     'HasXHPBaseHTMLHelpers' => $vendorDir . '/facebook/xhp-lib/src/html/HasXHPBaseHTMLHelpers.php',
     'HasXHPHelpers' => $vendorDir . '/facebook/xhp-lib/src/html/XHPHelpers.php',
     'ReflectionXHPAttribute' => $vendorDir . '/facebook/xhp-lib/src/core/ReflectionXHPAttribute.php',
@@ -113,6 +117,7 @@ return array(
     'xhp_output' => $vendorDir . '/facebook/xhp-lib/src/html/tags/o/Output.php',
     'xhp_p' => $vendorDir . '/facebook/xhp-lib/src/html/tags/p/P.php',
     'xhp_param' => $vendorDir . '/facebook/xhp-lib/src/html/tags/p/Param.php',
+    'xhp_picture' => $vendorDir . '/facebook/xhp-lib/src/html/tags/p/Picture.php',
     'xhp_pre' => $vendorDir . '/facebook/xhp-lib/src/html/tags/p/Pre.php',
     'xhp_progress' => $vendorDir . '/facebook/xhp-lib/src/html/tags/p/Progress.php',
     'xhp_q' => $vendorDir . '/facebook/xhp-lib/src/html/tags/q/Q.php',

@@ -9,6 +9,9 @@
  *
  */
 
+use FredEmmott\TypeAssert\IncorrectTypeException;
+use FredEmmott\TypeAssert\TypeAssert;
+
 // Composer didn't support autoloading enums until recently (2015-03-09)
 require_once('ReflectionXHPAttribute.php');
 require_once('ReflectionXHPChildrenDeclaration.php');
@@ -269,9 +272,7 @@ abstract class :x:composable-element extends :xhp {
     if (!$cache->containsKey($class)) {
       $cache[$class] = new ReflectionXHPChildrenDeclaration(
         :xhp::class2element($class),
-        /* UNSAFE_EXPR: This isn't a static method for some reason - but it
-         * always returns a static array, and is safe to call statically */
-        static::__xhpChildrenDeclaration(),
+        self::emptyInstance()->__xhpChildrenDeclaration(),
       );
     }
     return $cache[$class];
@@ -280,10 +281,14 @@ abstract class :x:composable-element extends :xhp {
   final public static function __xhpReflectionCategoryDeclaration(
   ): Set<string> {
     return new Set(
-      /* UNSAFE_EXPR: This isn't a static method for some reason - but it
-       * always returns a static array, and is safe to call statically */
-       array_keys(static::__xhpCategoryDeclaration())
+       array_keys(self::emptyInstance()->__xhpCategoryDeclaration())
     );
+  }
+
+  // Work-around to call methods that should be static without a real
+  // instance.
+  private static function emptyInstance(): this {
+    return hphp_create_object_without_constructor(static::class);
   }
 
   final public function getAttributes(): Map<string, mixed> {
@@ -522,6 +527,31 @@ abstract class :x:composable-element extends :xhp {
         if (enum_exists($class) && $class::isValid($val)) {
           break;
         }
+        // Things that are a valid array key without any coercion
+        if ($class === 'HH\arraykey') {
+          if (is_int($val) || is_string($val)) {
+            break;
+          }
+        }
+        if ($class === 'HH\num') {
+          if (is_int($val) || is_float($val)) {
+            break;
+          }
+        }
+        if (is_array($val)) {
+          try {
+            $type_structure = (new ReflectionTypeAlias($class))
+              ->getResolvedTypeStructure();
+            /* HH_FIXME[4110] $type_structure is an array, but should be a
+             * TypeStructure<T> */
+            TypeAssert::matchesTypeStructure($type_structure, $val);
+            break;
+          } catch (ReflectionException $_) {
+            // handled below
+          } catch (IncorrectTypeException $_) {
+            // handled below
+          }
+        }
         throw new XHPInvalidAttributeException(
           $this, $class, $attr, $val
         );
@@ -752,4 +782,3 @@ abstract class :x:composable-element extends :xhp {
     return isset($categories[$c]);
   }
 }
-
