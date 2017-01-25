@@ -31,11 +31,8 @@ abstract class Y {
   abstract const int MY_CONST;
 }
 
-
-
 function run(): void {
-  echo "===== start types annotation sample =====" . PHP_EOL;
-  var_dump(foo);
+  echo "=== types annotation sample ===" . PHP_EOL;
 }
 
 \type_system\annotations\run();
