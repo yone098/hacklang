@@ -31,12 +31,8 @@ function bar(Base $b): void {
   if ($b instanceof I) { // refine $b to interface I, but makes $b unresolved
     var_dump($b->i_method());
   }
-  // This is a type error!
-  // Given the instanceof check above, we have now made $b unresolved, a union
-  // between a type of I and Base. So we can only call methods common to both.
-  // which in this case there are none.
-  // Catchable fatal error: Hack type error: Could not find method foo in an object of type type_system\refining\gotch\I at /home/yone098/hacklang/samples/type_system/ref_gotcha.php line 38
-  //var_dump($b->foo());
+  // Catchable fatal error: Hack type error: Could not find method foo in an object of type type_system\refining\gotch\I at /home/ubuntu/hacklang/chapter2/2-4/ref_gotcha.php line 39
+  var_dump($b->foo());
 }
 
 function run(): void {
