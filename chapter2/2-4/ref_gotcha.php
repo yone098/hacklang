@@ -32,7 +32,7 @@ function bar(Base $b): void {
     var_dump($b->i_method());
   }
   // Catchable fatal error: Hack type error: Could not find method foo in an object of type type_system\refining\gotch\I at /home/ubuntu/hacklang/chapter2/2-4/ref_gotcha.php line 39
-  var_dump($b->foo());
+  //var_dump($b->foo());
 }
 
 function run(): void {
