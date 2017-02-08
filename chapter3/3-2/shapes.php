@@ -1,6 +1,6 @@
 <?hh
 
-namespace type_system\shapes;
+namespace shapes\sample;
 
 type customer = shape('id' => int, 'name' => string);
 
@@ -10,9 +10,9 @@ function create_user(int $id, string $name): customer {
 
 function run(): void {
   echo "===== start shapes sample =====" . PHP_EOL;
-  $c = create_user(0, "James");
+  $c = create_user(1, "yone098");
   var_dump($c['id']);
   var_dump($c['name']);
 }
 
-\type_system\shapes\run();
+\shapes\sample\run();

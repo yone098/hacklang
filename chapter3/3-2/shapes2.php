@@ -1,6 +1,6 @@
 <?hh
 
-namespace type_system\shapes2;
+namespace chapter3\shapes2;
 
 type Point = shape('x' => int, 'y' => int);
 
@@ -25,4 +25,4 @@ function run(): void {
   var_dump(distance_between_2_Points($p1, $p2));
 }
 
-\type_system\shapes2\run();
+\chapter3\shapes2\run();
