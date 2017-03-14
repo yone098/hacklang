@@ -2,8 +2,24 @@
 
 namespace typealias\samples;
 
-type Counter = int;
+type userId = int;
+newtype password = string;
 
-type Password = string;
+class User {
+  private userId $uid;
+  private password $pwd;
 
-newtype MyCallback<T> = (function(T): Password);
+  public function __construct(userId $userId, password $password) {
+    $this->uid = $userId;
+    $this->pwd = $password;
+  }
+}
+
+function run(): void {
+  $user = new User(100, "qwert");
+  var_dump($user);
+
+  //$user2 = new User("hoge", 123);
+}
+
+\typealias\samples\run();
